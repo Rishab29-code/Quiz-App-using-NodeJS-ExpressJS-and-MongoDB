@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+  </head>
+  <body>
+    <div class="ans1">
+        <div class="ans2">
+
+        
+    <div class="atag">
+        <a class="btn" href="http://localhost:3000/quizzes">Create a quiz</a>
+        <a class="btn" href="http://localhost:3000/quizzes/active">Get active Quizzes</a>
+        <a class="btn" href="http://localhost:3000/quizzes/all">Get all Quizzes</a>
+   </div>
+    <div>
+        <h1>Quiz Details</h1>
+    
+    <table class='table' style="width:60%;">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <%if(records.length>0) { %>
+                <%records.forEach(function(row){ %>
+                    <tr>
+                        <td>
+                            <%=row.question%>
+                        </td>
+                        <td><%=row.startDate%></td>
+                        <td><%=row.endDate%></td>
+                        <td><%=row.status%></td>
+                        <% if(row.status=="active"){ %>
+                        <td><p class="btag"><a href="http://localhost:3000/quizzes/attempt/<%=row._id%>">Attempt</a></p></td>
+                        <% } else { %>
+
+                            <% } %>
+
+                    </tr>
+                    <% } ) } %>
+                   
+        </tbody>
+        
+    </table>
+    </div>
+</div>
+</div>
+        </body>
+</html>

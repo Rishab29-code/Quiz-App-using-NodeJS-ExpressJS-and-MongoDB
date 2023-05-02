@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+  </head>
+  <body>
+    <div class="ans1">
+    <div class="ans2">
+    <h2 class="text-center"><%=title%></h2>
+    <div class="atag">
+      <a class="btn" href="http://localhost:3000">Back to Homepage</a>
+      
+ </div>
+
+    
+
+    <div class="panel-title" style="font-weight: bold;"> Attempt Quiz</div><br>
+    
+    <form  name="form2" method="POST" action="/quizzes/attempt/<%=records._id%>">
+      
+      <table class="table">
+        <% if(msg!='')  {%>
+            <p style="text-align: center ;font-weight: bold;"><%=msg %>!!</p>
+            <% }%>
+        <tr>
+          <td>Question</td>
+          <td><input type="text" name="question" value="<%=records.question%>" required></td>
+        </tr>
+        <tr>
+          <td>Options</td>
+          <td><input type="array" name="options" value="<%=records.options%>" required></td>
+        </tr>
+        <tr>
+            <td>Enter the index of your answer starting from 1</td>
+            <td><input type="number" name="correctanswer"  required></td>
+        </tr>
+        <tr>
+    
+          <td colspan="2"><input  class="button" type="submit" value="Submit"></td>
+          
+        </tr>
+    </table>
+     </form>
+      </div>
+  </div>
+  </body>
+</html>

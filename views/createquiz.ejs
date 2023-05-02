@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+  </head>
+  <body>
+    <div class="ans1">
+    <div class="ans2">
+    <h2 class="text-center"><%=title%></h2>
+    <div class="atag">
+      <a class="btn" href="http://localhost:3000">Back to Homepage</a>
+      
+ </div>
+
+    <div class="panel-title" style="font-weight: bold"> Create a Quiz</div><br>
+    
+    <form  name="form1" method="POST" action="/quizzes">
+      
+      <table>
+        <% if(msg!='')  {%>
+          <p style="text-align: center ;font-weight: bold;"><%=msg %>!!</p>
+          <% }%>
+        <tr>
+          <td>Question</td>
+          <td><input type="text" name="question" placeholder="Enter your Question" required></td>
+        </tr>
+        <tr>
+          <td>Options</td>
+          <td><input type="array" name="options" placeholder="Enter your options" required></td>
+        </tr>
+        <tr>
+          <td>Right Answer</td>
+          <td><input type="number" name="rightAnswer" placeholder="Enter your correct Answer" required></td>
+        </tr>
+        <tr>
+            <td> Start Date(yyyy/mm/dd)</td>
+            <td><input type="text" name="startDate" placeholder="Enter start date of your quiz " required></td>
+        </tr>
+        <tr>
+            <td> End Date(yyyy/mm/dd)</td>
+            <td><input type="text" name="endDate" placeholder="Enter end date of your quiz " required></td>
+        </tr>
+        <tr>
+            
+          <td colspan="2"><input type="submit" class="button" value="Submit"></td>
+        </tr>
+    </table>
+    
+    </form>
+      </div>
+  </div>
+  </body>
+</html>
